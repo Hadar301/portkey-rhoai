@@ -11,12 +11,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      {{- include "portkey-gateway.selectorLabels" . | nindent 6 }}
-      app.kubernetes.io/component: ollama
+      app.kubernetes.io/name: {{ include "portkey-gateway.name" . }}-ollama
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        {{- include "portkey-gateway.labels" . | nindent 8 }}
+        app.kubernetes.io/name: {{ include "portkey-gateway.name" . }}-ollama
+        app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: ollama
     spec:
       {{- with .Values.imagePullSecrets }}

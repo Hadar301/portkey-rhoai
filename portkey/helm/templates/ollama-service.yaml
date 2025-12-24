@@ -15,7 +15,7 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "portkey-gateway.selectorLabels" . | nindent 4 }}
-    app.kubernetes.io/component: ollama
+    app.kubernetes.io/name: {{ include "portkey-gateway.name" . }}-ollama
+    app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
