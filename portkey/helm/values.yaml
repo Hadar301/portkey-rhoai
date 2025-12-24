@@ -92,7 +92,7 @@ resources:
 # Horizontal Pod Autoscaler
 autoscaling:
   # -- Enable HPA
-  enabled: true
+  enabled: false
   # -- Minimum replicas
   minReplicas: 1
   # -- Maximum replicas
