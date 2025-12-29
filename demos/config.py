@@ -40,8 +40,15 @@ OLLAMA_CONFIG = {
 # LLaMA FP8 (vLLM deployment)
 LLAMA_FP8_CONFIG = {
     "provider": "openai",  # vLLM is OpenAI-compatible
-    "custom_host": "http://llama-fp8-predictor.hacohen-llmlite.svc.cluster.local:8080/v1",
+    "custom_host": "http://llama-fp8-predictor.hacohen-llmlite.svc.cluster.local:8080",
     "model": "openai/llama-fp8",
+}
+
+# Invalid endpoint (for fallback testing)
+INVALID_OLLAMA_CONFIG = {
+    "provider": "ollama",
+    "custom_host": "http://invalid-endpoint:9999",
+    "model": "llama3",
 }
 
 # =============================================================================
